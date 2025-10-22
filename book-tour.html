@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a Tour — Yordi Home Care</title>
+  <meta name="description" content="Schedule a guided tour of Yordi Home Care and meet our team." />
+  <link rel="stylesheet" href="book-tour.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo12.png" alt="" class="brand-mark" />
+        <span class="brand-name">Yordi Home Care</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#care">Care</a>
+        <a href="index.html#rooms">Rooms</a>
+        <a href="index.html#amenities">Amenities</a>
+        <a class="current" href="book-tour.html">Book a Tour</a>
+        <a class="cta" href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="main">
+    <section class="hero container">
+      <div class="hero-copy">
+        <h1>Book a Tour</h1>
+        <p>Pick a date and time that works for you. We’ll confirm by email or text.</p>
+      </div>
+    </section>
+
+    <section class="container grid">
+      <form id="tourForm" class="card" aria-labelledby="formTitle">
+        <h2 id="formTitle">Tour details</h2>
+
+        <div class="grid-2">
+          <label>
+            <span>Full Name</span>
+            <input name="name" required placeholder="Your name" autocomplete="name"/>
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" required placeholder="you@example.com" autocomplete="email"/>
+          </label>
+          <label>
+            <span>Mobile Phone</span>
+            <input name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel"/>
+          </label>
+          <label>
+            <span>Who is the tour for?</span>
+            <input name="for" placeholder="Parent, grandparent, self, etc."/>
+          </label>
+        </div>
+
+        <div class="grid-3">
+          <label>
+            <span>Preferred Date</span>
+            <input id="date" name="date" type="date" required />
+          </label>
+          <label>
+            <span>Time</span>
+            <select id="time" name="time" required>
+              <option value="" disabled selected>Select a time</option>
+            </select>
+          </label>
+          <label>
+            <span>Party Size</span>
+            <input name="party" type="number" min="1" max="8" value="#" />
+          </label>
+        </div>
+
+        <label>
+          <span>What would you like to see or ask about?</span>
+          <textarea name="notes" rows="5" placeholder="Rooms, pricing, dietary needs, therapy, etc."></textarea>
+        </label>
+
+        <fieldset class="prefs">
+          <legend>Contact Preference</legend>
+          <label><input type="radio" name="contact" value="email" checked/> Email</label>
+          <label><input type="radio" name="contact" value="text"/> Text</label>
+          <label><input type="radio" name="contact" value="phone"/> Phone call</label>
+        </fieldset>
+
+        <label class="checkbox">
+          <input type="checkbox" name="consent" required/>
+          <span>I agree to be contacted about this tour request.</span>
+        </label>
+
+        <div class="actions">
+          <button class="btn" type="submit">Request Tour</button>
+          <button class="btn ghost" type="reset">Clear</button>
+        </div>
+
+        <p class="fine">Submitting will generate a calendar invite (.ics) you can save. We’ll also show a summary you can copy into an email.</p>
+
+        <output id="status" role="status" aria-live="polite" class="status" hidden></output>
+      </form>
+
+      <aside class="card info">
+        <h2>What to expect</h2>
+        <ul>
+          <li>Friendly 30–45 minute walkthrough</li>
+          <li>See rooms, dining, activities, and courtyard</li>
+          <li>We can discuss care needs and pricing</li>
+          <li>Accessible parking and entrance</li>
+        </ul>
+
+        <div class="visit">
+          <h3>Visit us</h3>
+          <p>1234 Willow Lane, Oakland, CA 94605<br/>Tours: Mon–Sat, 10:00am–4:00pm</p>
+          <div class="map">
+            <img src="https://images.unsplash.com/photo-1502920917128-1aa500764ce7?q=80&w=1200&auto=format&fit=crop" alt="Neighborhood map placeholder"/>
+          </div>
+          <p class="fine">Prefer to call? (510) 555-0147</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Yordi Home Care.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html#rooms">Pricing</a>
+        <a href="index.html#care">Care Levels</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="book-tour.js"></script>
+</body>
+</html>
